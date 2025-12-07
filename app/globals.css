@@ -2,6 +2,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* GitHub contribution graph colors - more visible */
+[data-level="0"] {
+  fill: #1a1a1a;
+}
+[data-level="1"] {
+  fill: #0a4d2a;
+}
+[data-level="2"] {
+  fill: #0f6b3b;
+}
+[data-level="3"] {
+  fill: #28a745;
+}
+[data-level="4"] {
+  fill: #34d058;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -150,7 +167,15 @@
   font-family: var(--font-doto), sans-serif;
 }
 
+.doto-font {
+  font-family: var(--font-doto), sans-serif;
+}
+
 .jetbrains {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+.jetbrains-mono {
   font-family: var(--font-jetbrains-mono), monospace;
 }
 
@@ -159,7 +184,7 @@
 }
 
 .page {
-  @apply flex flex-col gap-4 max-w-[800px] mx-auto;
+  @apply flex flex-col gap-4 max-w-[910px] mx-auto;
 }
 
 .sparkles-bg {
@@ -183,4 +208,48 @@ code span {
 
 .dark code span {
   color: var(--shiki-dark) !important;
+}
+
+/* Custom text utilities */
+.text-muted-light {
+  color: #9ca3af;
+}
+
+.text-xxs {
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* Page styles */
+.art-page, .page {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3.5rem 1rem 8rem;
+}
+
+.page {
+  min-height: 100svh;
+  max-width: 910px;
+}
+
+.page {
+  width: 100%;
+}
+
+/* Border and box-sizing */
+* {
+  border-color: hsl(var(--border));
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
 }
