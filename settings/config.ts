@@ -57,15 +57,15 @@ export const siteConfig: SiteConfig = {
   hero: {
     greeting: "Hey It's me",
     name: "Fizz",
-    handle: "YoungFizz",
-    handleUrl: "https://discord.gg/youngfizz",
+    handle: "realfizz",
+    handleUrl: "https://discord.gg/realfizz",
     taglinePrefix: "15 Year old",
     taglineHighlights: ["Designer", "Fullstack Developer"],
   },
   socials: [
     {
       name: "GitHub",
-      url: "https://github.com/youngfizzler",
+      url: "https://github.com/realfizz",
       description: "Check out my code",
     },
     {
@@ -104,7 +104,7 @@ export const siteConfig: SiteConfig = {
   activity: {
     title: "Fizz's",
     subtitle: "Github Activity:",
-    githubUsername: "youngfizzler",
+    githubUsername: "realfizz",
   },
 };
 
