@@ -40,6 +40,18 @@ export interface ActivityConfig {
   githubUsername: string;
 }
 
+export interface StackCategory {
+  label: string;
+  summary: string;
+  items: string[];
+}
+
+export interface StackConfig {
+  title: string;
+  subtitle: string;
+  categories: StackCategory[];
+}
+
 export interface MetaConfig {
   title: string;
   description: string;
@@ -52,6 +64,7 @@ export interface SiteConfig {
   socials: SocialLink[];
   projects: ProjectsConfig;
   activity: ActivityConfig;
+  stack: StackConfig;
 }
 
 export const siteConfig: SiteConfig = {
@@ -124,6 +137,27 @@ export const siteConfig: SiteConfig = {
     title: "Fizz's",
     subtitle: "Github Activity:",
     githubUsername: "realfizz",
+  },
+  stack: {
+    title: "Fizz's",
+    subtitle: "preferred stack:",
+    categories: [
+      {
+        label: "Frontend",
+        summary: "The artwork.",
+        items: ["next.js", "tailwindcss", "shadcn", "zustand", "react-motion", "react-hook-form"],
+      },
+      {
+        label: "Backend",
+        summary: "Powering the artwork.",
+        items: ["elysia", "bun", "drizzleORM", "postgresql", "zod", "betterauth", "upstash redis"],
+      },
+      {
+        label: "Infrastructure",
+        summary: "Hosting the artwork.",
+        items: ["vercel", "cloudflare", "sentry", "upstash redis", "cloudflare kv", "neon db"],
+      },
+    ],
   },
 };
 
