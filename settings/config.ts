@@ -3,6 +3,7 @@ export interface HeroContent {
   name: string;
   handle: string;
   handleUrl: string;
+  country: string;
   taglinePrefix: string;
   taglineHighlights: string[];
 }
@@ -63,7 +64,8 @@ export const siteConfig: SiteConfig = {
     greeting: "Hey It's me",
     name: "Fizz",
     handle: "realfizz",
-    handleUrl: "https://discord.gg/realfizz",
+    handleUrl: "https://github.com/realfizz",
+    country: "/uk.svg",
     taglinePrefix: "15 Year old",
     taglineHighlights: ["Designer", "Fullstack Developer"],
   },

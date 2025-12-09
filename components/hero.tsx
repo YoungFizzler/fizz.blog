@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig, type SocialLink } from "@/settings/config";
 import { WaveIcon } from "@/components/ui/wave-icon";
 import { DiscordIcon } from "@/components/ui/discord-icon";
@@ -34,8 +35,16 @@ export function Hero() {
         <span>{hero.greeting}</span>
         <WaveIcon />
       </div>
-      <h1 className="doto-font text-2xl font-bold">
-        <span>{hero.name}</span>{" "}
+      <h1 className="doto-font flex flex-wrap items-center gap-2 text-2xl font-bold">
+        <Image
+          src={hero.country}
+          alt="Flag"
+          width={24}
+          height={24}
+          className="h-6 w-6 object-cover"
+          priority
+        />
+        <span>{hero.name}</span>
         <a
           className="group"
           target="_blank"
@@ -46,19 +55,19 @@ export function Hero() {
             / <span className="text-xxs">@</span>
             {hero.handle}
           </span>
-          </a>
-          <div className="pt-4">
-            <p className="text-sm">
-              {hero.taglinePrefix}{" "}
-              <span className="font-medium text-white">
-                {hero.taglineHighlights[0]}
-              </span>{" "}
-              &{" "}
-              <span className="font-medium text-white">
-                {hero.taglineHighlights[1]}
-              </span>
-            </p>
-          </div>
+        </a>
+        <div className="basis-full pt-4">
+          <p className="text-sm">
+            {hero.taglinePrefix}{" "}
+            <span className="font-medium text-white">
+              {hero.taglineHighlights[0]}
+            </span>{" "}
+            &{" "}
+            <span className="font-medium text-white">
+              {hero.taglineHighlights[1]}
+            </span>
+          </p>
+        </div>
       </h1>
       <div className="flex items-center gap-2">
         {socials.map((link) => (
