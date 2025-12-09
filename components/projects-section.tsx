@@ -50,7 +50,25 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="mt-2 flex flex-col gap-1">
           <div className="flex items-center justify-between gap-1.5 text-sm leading-5">
             <span>{project.title}</span>
-            <Badge>{project.badge}</Badge>
+            <div className="flex flex-wrap gap-1">
+              {project.badges.map((badge) =>
+                badge.href ? (
+                  <a
+                    key={`${project.title}-${badge.label}`}
+                    href={badge.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex"
+                  >
+                    <Badge>{badge.label}</Badge>
+                  </a>
+                ) : (
+                  <Badge key={`${project.title}-${badge.label}`}>
+                    {badge.label}
+                  </Badge>
+                ),
+              )}
+            </div>
           </div>
           <span className="jetbrains-mono line-clamp-2 text-xs text-neutral-400">
             {project.description}

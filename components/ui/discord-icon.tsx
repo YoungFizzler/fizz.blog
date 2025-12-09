@@ -20,3 +20,4 @@ export function DiscordIcon({ className }: DiscordIconProps) {
     </svg>
   );
 }
+

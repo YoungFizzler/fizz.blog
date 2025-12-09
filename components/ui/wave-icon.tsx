@@ -25,3 +25,4 @@ export function WaveIcon({ className }: WaveIconProps) {
     </svg>
   );
 }
+

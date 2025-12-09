@@ -14,12 +14,17 @@ export interface SocialLink {
   description?: string;
 }
 
+export interface ProjectBadge {
+  label: string;
+  href?: string;
+}
+
 export interface Project {
   title: string;
   description: string;
   href: string;
   image: string;
-  badge: string;
+  badges: ProjectBadge[];
 }
 
 export interface ProjectsConfig {
@@ -83,21 +88,33 @@ export const siteConfig: SiteConfig = {
         description: "Request-based homework solver",
         href: "https://autoace.io",
         image: "/projects/autoace.png",
-        badge: "SaaS",
+        badges: [
+          { label: "next.js", href: "https://nextjs.org" },
+          { label: "shadcn ui", href: "https://ui.shadcn.com" },
+          { label: "hono", href: "https://hono.dev" },
+        ],
       },
       {
         title: "Clutch",
         description: "Supabase for cheat developers",
         href: "https://clutch.cx",
         image: "/projects/clutch.png",
-        badge: "SaaS",
+        badges: [
+          { label: "next.js", href: "https://nextjs.org" },
+          { label: "elysiaJS", href: "https://elysiajs.com" },
+          { label: "drizzleORM", href: "https://orm.drizzle.team" },
+        ],
       },
       {
         title: "Dumped",
         description: "Auto-Updating Offset API",
         href: "https://dumped.wtf",
         image: "/projects/dumpedwtf.png",
-        badge: "Free",
+        badges: [
+          { label: "next.js", href: "https://nextjs.org" },
+          { label: "hono", href: "https://hono.dev" },
+          { label: "kv-storage", href: "https://developers.cloudflare.com/kv" },
+        ],
       },
     ],
   },
